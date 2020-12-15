@@ -1,6 +1,6 @@
-@import './_offsets.scss';
+@import './_sizes.scss';
 
 .root {
   width: $root-width;
-  margin: 0 $offset-xxl;
+  margin: $offset-xxl auto;
 }
