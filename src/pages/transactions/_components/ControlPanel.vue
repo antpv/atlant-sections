@@ -1,12 +1,13 @@
 <template>
   <div class="control-panel">
-    <Button type="primary">Start</Button>
-    <Button type="danger">Stop</Button>
+    <Button @click="onOpenSocket" type="primary">Start</Button>
+    <Button @click="destroyConnection" type="danger">Stop</Button>
     <Button type="warning">Reset</Button>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import { Button } from '../../../components'
 
 export default {
@@ -14,6 +15,14 @@ export default {
 
   components: {
     Button
+  },
+
+  methods: {
+    ...mapActions('transactions', ['openConnection', 'destroyConnection']),
+
+    onOpenSocket() {
+      this.openConnection({ wsUri: 'wss://ws.blockchain.info/inv' })
+    }
   }
 }
 </script>
