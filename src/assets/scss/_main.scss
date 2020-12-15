@@ -1,0 +1,11 @@
+@import "./_typografy.scss";
+@import "./_colors.scss";
+
+body {
+  margin: 0;
+  font-family: $font-family;
+  font-size: $font-family;
+  font-weight: $font-weight-m;
+  line-height: $line-height-m;
+  color: $font-color;
+}
